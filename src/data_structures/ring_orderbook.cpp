@@ -26,10 +26,10 @@ void ring_orderbook::book::update(const double& price, const double& quantity) {
 }
 int ring_orderbook::book::get_index(const double& price) {
     int diff = std::round(direction * (price - prices[head]) * 100);
-    if(diff > sz) 
+    if(abs(diff) > sz) 
         return -1;
     else 
-        return ((diff + head) % sz + sz) % sz;
+        return (diff + head + sz) & (sz - 1);
 }
 
 void ring_orderbook::update(const updates& bid_updates, const updates& ask_updates) {
