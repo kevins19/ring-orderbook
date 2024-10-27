@@ -29,7 +29,7 @@ int main() {
     double map_avg_time = map_future.get();
     double ring_avg_time = ring_future.get();
 
-    std::cout << "Average update time (ns) for map websocket: " << map_avg_time << std::endl;
+    std::cout << "Average update time (ns) for map orderbook: " << map_avg_time << std::endl;
     std::cout << "Average update time (ns) for ring orderbook: " << ring_avg_time << std::endl;
 
     return 0;
